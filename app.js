@@ -1,9 +1,14 @@
 const express = require('express');
+const router = express.Router();
 const app = express();
 const port = 4000;
 
-app.get('/', (req, res) => {
-    res.send("Goodbye World")
-});
+const homePage = require('./routes/index.js');
+const aboutPage = require('./routes/about.js');
+
+app.use('/', homePage);
+app.use('/about', aboutPage);
+
+app.use('/images', express.static('public'));
 
 app.listen(port, () => console.log("Working!"));
