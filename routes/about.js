@@ -16,8 +16,13 @@ router.get('/me', (req, res) => {
             "id": "me",
             "name": "Laura",
             "message": "Hello"
+        },
+        {
+            "id": "not-me",
+            "name": "SomeoneElse",
+            "message": "Bye"
         }
-    ])
+    ]);
 });
 
   module.exports = router;
